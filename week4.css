@@ -1,0 +1,72 @@
+body {
+	margin-left: 30px;
+	margin-top: 20px; 
+}
+
+main {
+	font-family: "Merriweather", serif;
+}
+
+form {
+	margin: 20px auto 5px auto;
+	padding: 5px 20px 5px 20px;
+	background-color: #f1eff2;
+	width: 400px;
+}
+
+
+#contact label{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+
+#contact_submit {
+	margin-left: 168px;
+}
+
+#contact div {
+	margin-top: 1em;
+}
+
+.contact_address {
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+	margin-left: 104px;
+	margin-bottom: 5px;
+}
+
+.contact_address:first-of-type {
+	margin-left: 0;
+}
+
+input[placeholder] {
+	text-align: left;
+}
+
+div#addressLines:nth-child(2) {
+	margin-left: -100px;
+}
+
+.error {
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show {
+	color: red;
+	margin-left: 10px;
+}
+
+input.invalid, textarea.invalid {
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid {
+	border: 2px solid green;
+}
+
+button {
+	font-family: "Merriweather", serif;
+}
