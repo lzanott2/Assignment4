@@ -43,35 +43,33 @@ $(document).ready(function() {
     });
 
 
-    //Phone must be 10 digits 
-    $( "#contact_phone" ).on('input', function() {
-        var input = $(this);
-        var is_phone = input.val();
-
-        if(is_phone && !isNaN(is_phone) && is_phone.length === 10) {
-            input.removeClass("invalid").addClass("valid");
-            $("input").css("border", "green");
-        }
-        else {
-            input.removeClass("valid").addClass("invalid");
-            $("input").css("border", "red");
-        }
-    });
-
-
     //Styling of the phone number.
-    $("input[@name='phone']").keyup(function() {
+    $("input[name=phone]").on('keyup', function() {
         var input = this.value.length;
         var is_phone = $(this).val();
 
-        //Can also use (input === 3) as the condition
-        if (input[2]) {
-            $("input[@name='phone']").val("(" + is_phone + ")" + " ");
-        } 
-        //Can also use (input === 9) as the condition
-        else if (input[5]) {
-            $("input[@name='phone']").val(is_phone + "-");
+        var input = $(this);
+
+        var areaCode;
+        var prefix;
+        var suffix;
+
+        //check for 10 digits
+        if(is_phone && !isNaN(is_phone) && is_phone.length > 10) {
+
+            areaCode = is_phone.substring(0,3);
+            prefix = is_phone.substring(3,6);
+            suffix = is_phone.substring(6,10);
+            is_phone = input.val("(" + areaCode + ")" + " " + prefix + "-" + suffix);
+            input.removeClass("invalid").addClass("valid");
+
+
         }
+        else {
+            input.removeClass("valid").addClass("invalid");
+        }
+
+
     });
 
 
